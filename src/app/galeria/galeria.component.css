@@ -1,0 +1,120 @@
+body{
+  background-color: black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: black;
+  background-size: cover;
+  background-position: 50%;
+  text-align: center
+}
+
+.card-body{
+  background-color: gray;
+}
+
+.card{
+  background-color: gray;
+}
+
+.navbar {
+
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  align-items: center;
+  background-color: #000000;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+  display: flex;
+  overflow: hidden; /* Para evitar que se muestren elementos flotantes */
+  width:auto; /* Ancho del navbar al 100% */
+  margin: -20px; /* Eliminar márgenes */
+  padding: 0; /* Eliminar relleno */
+  position: static;
+  font-size: larger;
+
+}
+
+.navbar1 {
+
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  align-items: center;
+  background-color: #302f2f;
+  justify-content: center;
+  align-items: center;
+  height: 5vh;
+  display: flex;
+  overflow: hidden; /* Para evitar que se muestren elementos flotantes */
+  width:auto; /* Ancho del navbar al 100% */
+  margin: -20px; /* Eliminar márgenes */
+  padding: 0; /* Eliminar relleno */
+  position: static;
+  font-size: larger;
+
+}
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+    flex-grow: 1;
+    text-align: center;
+  }
+
+  .menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .menu li {
+    margin-right: 50px;
+  }
+
+  .menu li:last-child {
+    margin-right: 0;
+  }
+
+  .menu li a {
+    font-size: 18px;
+    font-weight: bold;
+    color: #bdbdbd;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .menu li a:hover {
+    color: #ffffff;
+  }
+
+  .menu1 {
+    text-align: right;
+  }
+
+  .img {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+  }
+
+
+  .card-columns {
+    column-count: 4;
+  }
+
+  @media (max-width: 1200px) {
+    .card-columns {
+      column-count: 3;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .card-columns {
+      column-count: 2;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .card-columns {
+      column-count: 1;
+    }
+  }

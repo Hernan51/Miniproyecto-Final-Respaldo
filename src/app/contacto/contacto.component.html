@@ -1,0 +1,73 @@
+<nav class="navbar">
+
+  <ul class="menu">
+    <li class="menu1"><a routerLink="/">Inicio</a></li>
+    <li><a routerLink="/menu">Menú</a></li>
+    <li><a routerLink="/galeria">Galeria</a></li>
+    <li><a routerLink="{Inicio}"><img class= "img" src="../../assets/imagenes/png-clipart-texas-longhorn-english-longhorn-longhorn-steakhouse-lone-grove-others-cow-goat-family-logo.png" alt="">
+
+    </a></li>
+    <li><a routerLink="/reservas">Reservas</a></li>
+    <li><a routerLink="/contacto">Contacto</a></li>
+    <li><a routerLink="/acerca">Acerca de</a></li>
+  </ul>
+</nav>
+
+
+<body>
+
+<div class="center">
+
+	<div class="card">
+		<div class="additional">
+			<div class="user-card">
+				<div class="level center">
+					CONTACTO
+				</div><br>
+        <div class="logo-container">
+          <div class="logo"><br>
+              <img src="../../assets/img/png-clipart-texas-longhorn-english-longhorn-longhorn-steakhouse-lone-grove-others-cow-goat-family-logo.png">
+          </div>
+        </div>
+				<div class="points center">
+					COMENTARIOS O DUDAS
+				</div>
+
+			</div>
+			<div class="more-info">
+
+      <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm.value)">
+        <div class="form-group">
+            <br><h1>ESCRIBENOS</h1><br>
+          <input type="text" placeholder=" Nombre*"  clas="form-control" name="name" [(ngModel)]="name" required/>
+        </div>
+        <div class="form-group"><br>
+          <input name="emailaddress" placeholder="Email?*" class="form-control" type="email" name="email" [(ngModel)]="email" required/>
+        </div>
+        <div class="form-group"><br>
+          <textarea rows="4" cols="40" placeholder="Mensaje*" class="form-control" name="message" [(ngModel)]="message" required></textarea>
+        </div><br>
+        <button type="Enviar" class="btn btn-warning" [disabled]="!contactForm.valid">Submit</button>
+      </form>
+			</div>
+		</div>
+		<div class="general more-info">
+
+    <h1>CONTACTANOS</h1>
+<div class="coords"><br>
+
+ <span class="strong">Nombre: </span>
+ <span>{{contactForm.value.name}}</span>
+</div>
+<div class="coords"><br>
+ <span class="strong">Email: </span>
+ <span>{{contactForm.value.email}}</span>
+</div>
+<div class="coords"><br>
+ <span class="strong">Mensaje: </span>
+ <span>{{contactForm.value.message}}</span>
+</div>
+<span class="more">PASE EL MOUSE SOBRE LA TARJETA PARA OBTENER MÁS INFORMACIÓN</span>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "minii",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

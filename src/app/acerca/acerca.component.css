@@ -1,0 +1,125 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; margin-bottom: 50px;}
+
+.datostabla{
+  top: auto;
+  margin-top: 100px;
+  background-color: gray ;
+}
+
+.navbar {
+
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  align-items: center;
+  background-color: #000000;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+  display: flex;
+  overflow: hidden; /* Para evitar que se muestren elementos flotantes */
+  width:auto; /* Ancho del navbar al 100% */
+  margin: -20px; /* Eliminar márgenes */
+  padding: 0; /* Eliminar relleno */
+  position: static;
+  font-size: larger;
+
+}
+
+.navbar1 {
+
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  align-items: center;
+  background-color: #302f2f;
+  justify-content: center;
+  align-items: center;
+  height: 5vh;
+  display: flex;
+  overflow: hidden; /* Para evitar que se muestren elementos flotantes */
+  width:auto; /* Ancho del navbar al 100% */
+  margin: -20px; /* Eliminar márgenes */
+  padding: 0; /* Eliminar relleno */
+  position: static;
+  font-size: larger;
+
+}
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+    flex-grow: 1;
+    text-align: center;
+  }
+
+  .menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .menu li {
+    margin-right: 50px;
+  }
+
+  .menu li:last-child {
+    margin-right: 0;
+  }
+
+  .menu li a {
+    font-size: 18px;
+    font-weight: bold;
+    color: #bdbdbd;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .menu li a:hover {
+    color: #ffffff;
+  }
+
+  .menu1 {
+    text-align: right;
+  }
+
+  .img {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+  }
+
+
+  input,label{
+    color: rgb(131, 109, 109);
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+  }
+
+  table {
+    margin-top: 30px;
+    width: 100%;
+    background-color: #ffffff;
+  }
+  th{
+    background-color: #000000;
+  }
+
+  .bbb{
+    margin-top: 30px;
+    background-color:#ffffff;
+  }
+
+#somops2 {
+    width: 400px;
+    height: 100px;
+}
+#mapa{
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    justify-items: center;
+}
+

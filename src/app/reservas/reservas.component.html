@@ -1,0 +1,61 @@
+<nav class="navbar">
+
+  <ul class="menu">
+    <li class="menu1"><a routerLink="/">Inicio</a></li>
+    <li><a routerLink="/menu">Menú</a></li>
+    <li><a routerLink="/galeria">Galeria</a></li>
+    <li><a routerLink="{Inicio}"><img class= "img" src="../../assets/imagenes/png-clipart-texas-longhorn-english-longhorn-longhorn-steakhouse-lone-grove-others-cow-goat-family-logo.png" alt="">
+
+    </a></li>
+    <li><a routerLink="/reservas">Reservas</a></li>
+    <li><a routerLink="/contacto">Contacto</a></li>
+    <li><a routerLink="/acerca">Acerca de</a></li>
+  </ul>
+</nav>
+
+<nav class="navbar1">
+  <ul class="menu">
+    <li><a routerLink="/reservas">Haz tu reservación</a></li>
+    <li><a routerLink="/listareservas">Lista de reservaciones</a></li>
+  </ul>
+</nav>
+<body>
+
+
+<div class="login-box" [ngStyle]="{'background-color':'#fff', 'color':'black'}">
+  <h2>Reservaciones</h2>
+  <form (submit)="guardarDatos()">
+
+      <div class="coolinput mb-3 text-center">
+        <label for="input" class="text">Nombre:</label>
+        <input type="text" [(ngModel)]="nombre" name="dato1" class="input">
+      </div>
+
+      <div class="coolinput mb-3 text-center">
+        <label for="input" class="text">Teléfono:</label>
+        <input type="text" [(ngModel)]="telefono" name="dato2" class="input">
+      </div>
+
+    <div class="coolinput mb-3 text-center">
+        <label for="input" class="text">Email:</label>
+        <input type="text" [(ngModel)]="email" name="dato3" class="input">
+      </div>
+
+    <div class="coolinput mb-3 text-center">
+      <label for="input" class="text">Fecha:</label>
+      <input type="date" [(ngModel)]="fecha" name="dato4" id="date" class="input" required>
+    </div>
+
+    <div class="coolinput mb-3 text-center">
+      <label for="input" class="text">Hora:</label>
+      <input type="time" [(ngModel)]="hora" name="dato5" id="time" class="input" required>
+    </div>
+
+      <button type="submit" class="btn btn-light">Reservar</button>
+
+  </form>
+
+</div>
+
+
+</body>

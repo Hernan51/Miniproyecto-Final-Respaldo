@@ -1,0 +1,57 @@
+<nav class="navbar">
+
+  <ul class="menu">
+    <li class="menu1"><a routerLink="/">Inicio</a></li>
+    <li><a routerLink="/menu">Menú</a></li>
+    <li><a routerLink="/galeria">Galeria</a></li>
+    <li><a routerLink="{Inicio}"><img class= "img" src="../../assets/imagenes/png-clipart-texas-longhorn-english-longhorn-longhorn-steakhouse-lone-grove-others-cow-goat-family-logo.png" alt="">
+
+    </a></li>
+    <li><a routerLink="/reservas">Reservas</a></li>
+    <li><a routerLink="/contacto">Contacto</a></li>
+    <li><a routerLink="/acerca">Acerca de</a></li>
+  </ul>
+</nav>
+
+<nav class="navbar1">
+  <ul class="menu">
+    <li><a routerLink="/reservas">Haz tu reservación</a></li>
+    <li><a routerLink="/listareservas">Lista de reservaciones</a></li>
+  </ul>
+</nav>
+
+<div class="datostabla" [ngStyle]="{'text-align': 'center'}">
+
+  <div *ngIf="historial.length > 0">
+    <h2>Datos guardados:</h2>
+  </div>
+  <div *ngIf="historial.length === 0">
+    <p>No hay datos guardados.</p>
+  </div>
+
+
+  <table *ngIf="historial.length > 0" class="table">
+    <thead class="thead-dark" [ngStyle]="{'text-align': 'center'}">
+      <tr>
+        <th>Nombre</th>
+        <th>Teléfono</th>
+        <th>Email</th>
+        <th>Fecha</th>
+        <th>Hora</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of historial">
+        <td>{{ item.nombre }}</td>
+        <td>{{ item.telefono }}</td>
+        <td>{{ item.email }}</td>
+        <td>{{ item.fecha }}</td>
+        <td>{{ item.hora }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div *ngIf="historial.length === 0">
+    <p>No hay datos guardados en el historial.</p>
+  </div>
+  </div>
+

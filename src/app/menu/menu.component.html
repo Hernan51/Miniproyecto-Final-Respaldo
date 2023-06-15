@@ -1,0 +1,35 @@
+<nav class="navbar">
+
+  <ul class="menu">
+    <li class="menu1"><a routerLink="/">Inicio</a></li>
+    <li><a routerLink="/menu">Menú</a></li>
+    <li><a routerLink="/galeria">Galeria</a></li>
+    <li><a routerLink="{Inicio}"><img class= "img" src="../../assets/imagenes/png-clipart-texas-longhorn-english-longhorn-longhorn-steakhouse-lone-grove-others-cow-goat-family-logo.png" alt="">
+
+    </a></li>
+    <li><a routerLink="/reservas">Reservas</a></li>
+    <li><a routerLink="/contacto">Contacto</a></li>
+    <li><a routerLink="/acerca">Acerca de</a></li>
+
+  </ul>
+</nav>
+
+<div class="menu-container">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="menu-title">Menu</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let item of menuItems">
+      <div class="card">
+        <img class="card-img-top" src="{{ item.image }}" alt="{{ item.name }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ item.name }}</h5>
+          <p class="card-text">{{ item.description }}</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

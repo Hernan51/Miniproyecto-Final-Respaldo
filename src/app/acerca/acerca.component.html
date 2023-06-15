@@ -1,0 +1,115 @@
+<nav class="navbar">
+
+  <ul class="menu">
+      <li class="menu1"><a routerLink="/">Inicio</a></li>
+      <li><a routerLink="/menu">Menú</a></li>
+      <li><a routerLink="/galeria">Galeria</a></li>
+
+      <li><a routerLink="{Inicio}"><img class= "img" src="../../assets/imagenes/png-clipart-texas-longhorn-english-longhorn-longhorn-steakhouse-lone-grove-others-cow-goat-family-logo.png" alt="">
+
+      </a></li>
+      <li><a routerLink="/reservas">Reservas</a></li>
+      <li><a routerLink="/contacto">Contacto</a></li>
+      <li><a routerLink="/acerca">Acerca De</a></li>
+
+
+    </ul>
+</nav>
+
+
+
+
+<nav class="navbar1">
+  <ul class="menu">
+    <li><a routerLink="">CONOCENOS!</a></li>
+
+  </ul>
+</nav>
+
+
+<div>
+  <mat-tab-group  class="bbb">
+      <mat-tab label="¿Quienes somos?">
+          <div class="card mb-3">
+              <img id="somos2" src="../../assets/imagenes/somos2.jpg" class="" alt="...">
+              <div class="card-body">
+
+                <p class="card-text">Somos un restaurante Mexicano. Venga y conozca la tradicional y única receta de carnes en su jugo que sólo encontrará en el mejor restaurante de Aguascalientes, Las Originales Carnes en su Jugo Royal Asado, en donde le ofreceremos la mejor atención así como un ambiente excepcional siempre.
+
+                  Como Restaurante de Cortes de Carne, preparamos nuestros alimentos con ingredientes de la más alta calidad, así como higiene y atención personalizada a cada uno de nuestros clientes. Además, ofrecemos un área para que sus niños puedan divertirse, estacionamiento y valet parking para su mayor comodidad.
+
+                  No lo piense más y visítenos, en Las Originales Carnes en su Jugo Royal Asado lo atenderemos siempre con la calidad que nos respalda, con los costos más accesibles que sólo nosotros le ofreceremos, se convencerá de que somos su mejor opción de Restaurante de Cortes de Carne.</p>
+
+              </div>
+          </div>
+      </mat-tab>
+      <mat-tab label="Nuestras Sucursales">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59273.10734366612!2d-102.30132316000504!3d21.79692765303251!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8429f2c2ce445317%3A0x6986648b194a3d70!2s20394%20Las%20%C3%81nimas%2C%20Ags.!5e0!3m2!1ses-419!2smx!4v1684186725330!5m2!1ses-419!2smx" id="mapa" width="1100" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe
+width="560"
+height="315"
+[src]="video | domseguro:'https://www.youtube.com/embed/' "  title="YouTube video player"
+frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+allowfullscreen
+></iframe>
+
+          </mat-tab>
+
+      <mat-tab label="Nuestros Chefs">
+          <div class="card text-bg-dark">
+              <img src="../../assets/imagenes/Chefs.jpg" class="card-img" alt="...">
+              <div class="card-img-overlay">
+                <h5 class="card-title">Los mejores Chefs</h5>
+                <p class="card-text">Royal Asado cuenta con los mejores Chefs especializados en cortes de carne, cuentan con años de experiencia y producto de ello sus respectivas estrellas Michelin, conocelos:</p>
+
+              </div>
+            </div>
+          <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource">
+
+                <!-- Position Column -->
+                <ng-container matColumnDef="position">
+                  <th mat-header-cell *matHeaderCellDef> No. de estrellas M </th>
+                  <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="name">
+                  <th mat-header-cell *matHeaderCellDef>Nombre</th>
+                  <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                </ng-container>
+
+                <!-- Weight Column -->
+                <ng-container matColumnDef="weight">
+                  <th mat-header-cell *matHeaderCellDef> Edad </th>
+                  <td mat-cell *matCellDef="let element"> {{element.edad}} </td>
+                </ng-container>
+
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="symbol">
+                  <th mat-header-cell *matHeaderCellDef> Pais </th>
+                  <td mat-cell *matCellDef="let element"> {{element.pais}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+              </table>
+
+              <iframe
+              width="560"
+              height="315"
+              style="align-content: center;"
+              [src]="video | domseguro:'https://www.youtube.com/embed/' "  title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+
+
+
+            </div>
+      </mat-tab>
+    </mat-tab-group>
+</div>

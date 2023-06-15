@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "loginproyecto-66d77": {
+      "hosting": {
+        "minii": [
+          "loginproyecto-66d77"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "loginproyecto-66d77"
+  }
+}
