@@ -1,0 +1,21 @@
+<h2>Resultados de la consulta</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Teléfono</th>
+      <th>Email</th>
+      <th>Fecha</th>
+      <th>Hora</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let resultado of resultados">
+      <td>{{ resultado.nombre }}</td>
+      <td>{{ resultado.telefono }}</td>
+      <td>{{ resultado.email }}</td>
+      <td>{{ resultado.fecha }}</td>
+      <td>{{ resultado.hora }}</td>
+    </tr>
+  </tbody>
+</table>

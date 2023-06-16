@@ -36,6 +36,10 @@ import { provideMessaging,getMessaging } from '@angular/fire/messaging';
 import { provideStorage,getStorage } from '@angular/fire/storage';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { GraficaComponent } from './grafica/grafica.component';
+import { ConsultasFirestoreComponent } from './consultas-firestore/consultas-firestore.component';
+import { HttpClientModule } from '@angular/common/http';
+import { provideFunctions,getFunctions } from '@angular/fire/functions';
 
 
 
@@ -53,6 +57,8 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
     AcercaComponent,
     GaleriaComponent,
     DomsegurpPipe,
+    GraficaComponent,
+    ConsultasFirestoreComponent,
 
 
   ],
@@ -80,7 +86,9 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
     provideStorage(() => getStorage()),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    provideFunctions(() => getFunctions())
   ],
   providers: [],
   bootstrap: [AppComponent]

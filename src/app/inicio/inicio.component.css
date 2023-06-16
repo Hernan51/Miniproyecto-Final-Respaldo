@@ -117,3 +117,29 @@
   font-size: 14px;
   color: #888888;
 }
+
+@keyframes fire {
+  0% {
+    color: red;
+
+  }
+  50% {
+    color: red;
+    text-shadow: 0 0 5px orange, 0 0 10px orange, 0 0 20px orange, 0 0 30px orange, 0 0 40px orange;
+  }
+  100% {
+    color: red;
+    
+  }
+}
+
+.fire-animation {
+  font-size: 48px;
+  text-align: center;
+}
+
+.letter {
+  display: inline-block;
+  animation: fire 2s ease-in-out infinite;
+  margin-top: 20px;
+}

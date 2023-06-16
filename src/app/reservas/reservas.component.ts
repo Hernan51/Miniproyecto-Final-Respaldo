@@ -4,6 +4,7 @@ import { ToastrModule, ToastrService } from 'ngx-toastr';
 import Swal from 'sweetalert2';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import 'firebase/firestore';
+import { HttpClient } from '@angular/common/http';
 
 
 
@@ -18,7 +19,7 @@ const DATOS_STORAGE_KEY = 'datosGuardados';
 
 export class ReservasComponent implements OnInit {
 
-  constructor(private toastr: ToastrService,private firestore:AngularFirestore) {}
+  constructor(private toastr: ToastrService,private firestore:AngularFirestore,private http: HttpClient) {}
 
   title: 'miniproyecto2' | undefined;
   nombre: any;
@@ -63,6 +64,7 @@ export class ReservasComponent implements OnInit {
       return;
     }else{
       Swal.fire('Reservación Confirmada');
+
     // Guardar los datos en localStorage
     const datosGuardados = localStorage.getItem(DATOS_STORAGE_KEY);
     if (datosGuardados) {
@@ -88,6 +90,32 @@ export class ReservasComponent implements OnInit {
     this.fecha = '';
     this.hora = '';
   }
+
+}
+
+enviarDatosAPI() {
+  // Obtener los datos de Firebase
+  this.firestore
+    .collection('reservaciones')
+    .valueChanges()
+    .subscribe(
+      (data: any) => {
+        // Enviar los datos a la API
+        this.http.post('http://localhost:3000/api/data', data).subscribe(
+          () => {
+            this.toastr.success('Datos enviados a la API');
+          },
+          (error: any) => {
+            console.error('Error al enviar los datos a la API:', error);
+            this.toastr.error('Error al enviar los datos a la API');
+          }
+        );
+      },
+      (error: any) => {
+        console.error('Error al obtener los datos de Firebase:', error);
+        this.toastr.error('Error al obtener los datos de Firebase');
+      }
+    );
 }
 
   validarDatosRepetidos() {

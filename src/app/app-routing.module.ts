@@ -7,6 +7,7 @@ import { MenuComponent } from './menu/menu.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { AcercaComponent } from './acerca/acerca.component';
 import { GaleriaComponent } from './galeria/galeria.component';
+import { ConsultasFirestoreComponent } from './consultas-firestore/consultas-firestore.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: 'contacto', component:ContactoComponent},
   {path: 'acerca',component: AcercaComponent},
   {path: 'galeria',component: GaleriaComponent},
+  {path: 'consultas',component: ConsultasFirestoreComponent},
   {path: '**', pathMatch: 'full', redirectTo: 'home'}
 
 ];
