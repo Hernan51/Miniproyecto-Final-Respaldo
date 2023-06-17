@@ -1,0 +1,35 @@
+
+  <head>
+    <title>Registro de usuario</title>
+    <link rel="stylesheet" href="register.component.css">
+  </head>
+
+<div class="register">
+  <form [formGroup]="formReg" (ngSubmit)="onSubmit()">
+    <h1>Register</h1>
+    <input
+      type="email"
+      formControlName="email"
+      name="email"
+      placeholder="Email"
+      required="required"
+    />
+    <input
+      type="password"
+      formControlName="password"
+      name="password"
+      placeholder="Password"
+      required="required"
+    />
+    <input
+      type="password"
+
+      name="password"
+      placeholder="Repeat the password"
+      required="required"
+    />
+    <button type="submit">Register</button>
+    <button><a href="http://localhost:4200/login">¿Ya eres miembro? ¡Inicia Sesion!</a></button>
+
+  </form>
+</div>

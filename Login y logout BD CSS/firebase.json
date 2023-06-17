@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "loginBeto",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}
