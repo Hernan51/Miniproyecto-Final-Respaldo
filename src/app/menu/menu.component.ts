@@ -59,6 +59,7 @@ export class MenuComponent {
   addMenuItem(name: string, description: string, image: string) {
     this.menuItems.push({ name, description, image });
   }
+  
 }
 
 

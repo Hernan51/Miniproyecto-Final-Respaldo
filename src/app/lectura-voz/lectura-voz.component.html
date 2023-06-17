@@ -1,0 +1,78 @@
+<button mat-fab class="floating-icon" [matMenuTriggerFor]="menu">
+
+  <mat-icon>accessibility_new</mat-icon>
+
+</button>
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="toggleButtons()" class="main-button" [matMenuTriggerFor]="menu2">
+    <mat-icon>hearing</mat-icon>
+    Lector de pantalla
+  </button>
+  <mat-menu #menu2="matMenu">
+    <button mat-menu-item (click)="startSpeaking()">PLAY
+      <mat-icon>play_circle_filled</mat-icon>
+    </button>
+    <button mat-menu-item (click)="pauseSpeaking()">PAUSA
+      <mat-icon>pause_circle_outline</mat-icon>
+    </button>
+    <button mat-menu-item (click)="stopSpeaking()">STOP
+      <mat-icon>playlist_add_check</mat-icon>
+    </button>
+  </mat-menu>
+
+
+  <button mat-menu-item (click)="toggleButtons()" class="main-button" [matMenuTriggerFor]="menu3">
+    <mat-icon> format_size</mat-icon>
+    Tamaño de letra
+  </button>
+  <mat-menu #menu3="matMenu">
+    <button mat-menu-item (click)="cambiarTam('pequeño')">
+      Pequeña
+    </button>
+    <button mat-menu-item (click)="cambiarTam('mediano')">
+      Mediana
+    </button>
+    <button mat-menu-item (click)="cambiarTam('grande')">
+      Grande
+    </button>
+  </mat-menu>
+  <button mat-menu-item (click)="toggleButtons()" class="main-button" [matMenuTriggerFor]="menu4">
+    <mat-icon>tonality</mat-icon>
+    Contraste
+  </button>
+  <mat-menu #menu4="matMenu">
+    <button mat-menu-item (click)="cambiarContraste('normal')">
+     Ninguno
+    </button>
+    <button mat-menu-item (click)="cambiarContraste('oscuro')">
+      Contraste oscuro
+    </button>
+    <button mat-menu-item (click)="cambiarContraste('luz')">
+      Contraste de luz
+    </button>
+    <button mat-menu-item (click)=" cambiarContraste('invertido')">
+      Contraste invertido
+    </button>
+    <button mat-menu-item (click)=" cambiarContraste('byn')">
+      B&W
+    </button>
+  </mat-menu>
+
+  <button mat-menu-item (click)="toggleButtons()" class="main-button" [matMenuTriggerFor]="menu5">
+    <mat-icon>link</mat-icon>
+    Enlaces realce
+  </button>
+  <mat-menu #menu5="matMenu">
+    <button mat-menu-item (click)="realzarEnlaces('red')">Realzar enlaces en rojo</button>
+    <button mat-menu-item (click)="realzarEnlaces('yellow')">Realzar enlaces en amarillo</button>
+    <button mat-menu-item (click)="restaurarEnlaces()">Restaurar enlaces</button>
+
+  </mat-menu>
+</mat-menu>
+
+
+
+<!--<button (click)="startSpeaking()">Iniciar lectura</button>
+<button (click)="pauseSpeaking()">Pausar lectura</button>
+<button (click)="stopSpeaking()">Terminar lectura</button>-->

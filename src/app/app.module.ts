@@ -36,6 +36,18 @@ import { provideMessaging,getMessaging } from '@angular/fire/messaging';
 import { provideStorage,getStorage } from '@angular/fire/storage';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+//para nodejs- Andrea
+import { HttpClientModule } from '@angular/common/http';
+import { LecturaVozComponent } from './lectura-voz/lectura-voz.component';
+;
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatSidenavModule } from '@angular/material/sidenav';
+
+
+
+
+
 
 
 
@@ -53,6 +65,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
     AcercaComponent,
     GaleriaComponent,
     DomsegurpPipe,
+    LecturaVozComponent,
 
 
   ],
@@ -72,6 +85,10 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
     MatTableModule,
     MatPaginatorModule,
     BrowserAnimationsModule,
+    HttpClientModule,
+    MatIconModule,
+    MatMenuModule,
+    MatSidenavModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),

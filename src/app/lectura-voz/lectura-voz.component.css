@@ -1,0 +1,104 @@
+@import "~@fortawesome/fontawesome-free/css/all.css";
+
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+
+
+.floating-icon {
+    position:fixed;
+    bottom: 50%;
+    right: 20px;
+    background-color: #333;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    z-index: 999;
+  }
+  ::ng-deep .mat-menu-panel.menu-panel {
+    right: 0 !important;
+  }
+  .mat-menu-panel.menu-panel.menu-above.menu-below.menu-x-above.menu-x-below.mat-elevation-z8.mat-menu-before {
+    color: [white];
+  }
+  
+  .menuu2 {
+    display: none;
+    position: absolute;
+    top: 200px;
+    right: 0;
+    background-color: white;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  .floating-icon:hover .menu {
+    display: block;
+  }
+  .additional-buttons {
+    display: none;
+  }
+  .light-contrast {
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  .dark-contrast {
+    background-color: #333;
+    color: #f9f9f9;
+  }
+  
+  .inverted-contrast {
+    filter: invert(100%);
+  }
+
+  small {
+    font-size: 14px;
+  }
+  
+  .medium {
+    font-size: 16px;
+  }
+  
+  .large {
+    font-size: 40px;
+  }
+  
+
+  .realce {
+    /* Define los estilos de realce según tus preferencias */
+    color: red;
+    text-decoration: underline;
+  }
+  
+  button.active {
+    /* Define los estilos para el botón cuando está activo */
+    font-weight: bold;
+  }
+
+
+  .rojo {
+    color: red;
+  }
+  
+  .amarillo {
+    color: yellow;
+  }
+
+  .realzado {
+color: white;
+    
+    /* Estilos para resaltar los enlaces */
+  }
+  
+  .realzado.rojo {
+    color: red;
+  }
+  
+  .realzado.amarillo {
+    color: yellow;
+  }

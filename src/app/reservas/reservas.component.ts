@@ -1,9 +1,11 @@
 import { Component,OnInit } from '@angular/core';
-import { NgIf } from '@angular/common';
-import { ToastrModule, ToastrService } from 'ngx-toastr';
+import { CorreoService } from '../services/correo.service';
+import {  ToastrService } from 'ngx-toastr';
 import Swal from 'sweetalert2';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+
 import 'firebase/firestore';
+
 
 
 
@@ -18,7 +20,8 @@ const DATOS_STORAGE_KEY = 'datosGuardados';
 
 export class ReservasComponent implements OnInit {
 
-  constructor(private toastr: ToastrService,private firestore:AngularFirestore) {}
+  constructor(private toastr: ToastrService, private firestore: AngularFirestore, private correoService: CorreoService) {}
+
 
   title: 'miniproyecto2' | undefined;
   nombre: any;
@@ -56,6 +59,7 @@ export class ReservasComponent implements OnInit {
       fecha: this.fecha,
       hora: this.hora,
     };
+  
 
     // Validar si los datos ya existen en el historial
     if (this.validarDatosRepetidos()) {
@@ -73,7 +77,12 @@ export class ReservasComponent implements OnInit {
       .then(() => {
         console.log('Datos guardados en Firestore');
         // Puedes realizar alguna acción adicional después de guardar los datos
-      })
+      
+    
+        })
+
+
+
       .catch((error: any) => {
         console.error('Error al guardar los datos:', error);
       });
@@ -88,7 +97,34 @@ export class ReservasComponent implements OnInit {
     this.fecha = '';
     this.hora = '';
   }
+  
 }
+enviarCorreo() {
+  const datos = {
+    nombre: this.nombre,
+    telefono: this.telefono,
+    email: this.email,
+    fecha: this.fecha,
+    hora: this.hora
+  };
+
+  this.correoService.enviarCorreo(datos).subscribe(
+    (response) => {
+      console.log(response); // Maneja la respuesta del servidor aquí
+    },
+    (error) => {
+      console.error(error); // Maneja el error aquí
+    }
+  );
+
+  this.nombre = '';
+  this.telefono = '';
+  this.email = '';
+  this.fecha = '';
+  this.hora = '';
+}
+
+
 
   validarDatosRepetidos() {
     const fechaHora = this.fecha + ' ' + this.hora;
