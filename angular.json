@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "minii": {
+    "Login-logout": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/minii",
+            "outputPath": "dist/login-logout",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -21,19 +21,13 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
-              "src",
+              "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/custom-theme.scss",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
-            "scripts": [
-              "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/@popperjs/core/dist/umd/popper.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -45,8 +39,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "500kb",
-                  "maximumError": "500kb"
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
                 }
               ],
               "outputHashing": "all"
@@ -66,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "minii:build:production"
+              "browserTarget": "Login-logout:build:production"
             },
             "development": {
-              "browserTarget": "minii:build:development"
+              "browserTarget": "Login-logout:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -77,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "minii:build"
+            "browserTarget": "Login-logout:build"
           }
         },
         "test": {
@@ -89,26 +83,13 @@
             ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
-              "silueta-de-vaca.png",
+              "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "@angular/material/prebuilt-themes/deeppurple-amber.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
-            "scripts": [
-              "node_modules/jquery/dist/jquery.slim.min.js",
-              "node_modules/popper.js/dist/umd/popper.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js"
-            ]
-          }
-        },
-        "deploy": {
-          "builder": "@angular/fire:deploy",
-          "options": {
-            "version": 2,
-            "browserTarget": "minii:build:production"
+            "scripts": []
           }
         }
       }

@@ -6,6 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'minii';
-  video='cSvLambSquw?rel=0&amp;autoplay=1cd';
+  title = 'Login-logout';
 }
