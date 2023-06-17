@@ -6,7 +6,7 @@
 .floating-icon {
     position:fixed;
     bottom: 50%;
-    right: 20px;
+    left: 20px;
     background-color: #333;
     color: #fff;
     width: 50px;

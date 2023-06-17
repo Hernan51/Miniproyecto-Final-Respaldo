@@ -43,6 +43,7 @@ import { LecturaVozComponent } from './lectura-voz/lectura-voz.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MenuFilterPipe } from './menu/menu-filter.pipe';
 
 
 
@@ -66,6 +67,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     GaleriaComponent,
     DomsegurpPipe,
     LecturaVozComponent,
+    MenuFilterPipe
 
 
   ],

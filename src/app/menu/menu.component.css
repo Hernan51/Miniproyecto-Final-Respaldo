@@ -48,3 +48,25 @@ small {
 .large {
   font-size: 40px;
 }
+.search-icon {
+  cursor: pointer;
+  margin-left: 10px;
+  color: white;
+}
+
+.search-icon i {
+  font-size: 20px;
+}
+.custom-width {
+  width: 200px; /* Modifica el valor según tus necesidades */
+}
+input{
+  background-color: #bdbdbd; 
+  width: 150px; 
+  height: 30px; 
+  border-radius: 5px;  
+  border-style: solid; 
+  border-width: 1px; 
+  border-color: black; 
+  
+}
