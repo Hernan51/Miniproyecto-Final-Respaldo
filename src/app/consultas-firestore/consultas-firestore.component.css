@@ -1,3 +1,5 @@
+@import "../inicio/inicio.component.css";
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -22,5 +24,5 @@ tr:hover {
 
 h2{
   text-align: center;
-  color: white; 
+  color: white;
 }
