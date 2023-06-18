@@ -1,3 +1,4 @@
+@import "../inicio/inicio.component.css";
 
 .video-wrapper {
   position: relative;
@@ -13,71 +14,7 @@
   height: 100%;
 }
 
-.navbar {
 
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  align-items: center;
-  background-color: #000000;
-  justify-content: center;
-  align-items: center;
-  height: 20vh;
-  display: flex;
-  overflow: hidden; /* Para evitar que se muestren elementos flotantes */
-  width:auto; /* Ancho del navbar al 100% */
-  margin: -20px; /* Eliminar márgenes */
-  padding: 0; /* Eliminar relleno */
-  position: static;
-  font-size: larger;
-
-}
-
-.logo {
-  font-size: 28px;
-  font-weight: bold;
-  color: #ffffff;
-  text-decoration: none;
-  flex-grow: 1;
-  text-align: center;
-}
-
-.menu {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.menu li {
-  margin-right: 50px;
-}
-
-.menu li:last-child {
-  margin-right: 0;
-}
-
-.menu li a {
-  font-size: 18px;
-  font-weight: bold;
-  color: #bdbdbd;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-
-
-.menu li a:hover {
-  color: #ffffff;
-}
-
-.menu1 {
-  text-align: right;
-}
-
-.img {
-  width: 60px;
-  height: 60px;
-  border-radius: 30px;
-}
 
 .carousel {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from '../user.service';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -40,7 +41,12 @@ export class LoginComponent implements OnInit {
         console.log(response);
         this.router.navigate(['/inicio']);
       })
-      .catch(error => console.log(error));
+      .catch(error => Swal.fire({
+        icon: 'error',
+        title: 'Contraseña/correo incorrectos',
+        text: 'Vuelve a intentarlo'
+      })
+      );
   }
 }
 
@@ -50,7 +56,11 @@ export class LoginComponent implements OnInit {
         console.log(response);
         this.router.navigate(['/inicio']);
       })
-      .catch(error => console.log(error))
+      .catch(error => Swal.fire({
+        icon: 'error',
+        title: 'Algo salió mal',
+        text: 'Intenta más tarde'
+      }))
   }
 
 }

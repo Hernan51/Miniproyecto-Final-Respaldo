@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import * as QRCode from 'qrcode';
 
-interface MenuItem {
+export interface MenuItem {
   name: string;
   description: string;
-
   image: string;
 }
 
@@ -56,6 +55,21 @@ export class MenuComponent {
   ];
 
   constructor() { }
+  showSearch: boolean = false;
+  searchText: string = '';
+
+  toggleSearch() {
+    this.showSearch = !this.showSearch;
+  }
+
+  get filteredMenuItems(): MenuItem[] {
+    if (!this.searchText || this.searchText.trim() === '') {
+      return this.menuItems;
+    }
+
+    const searchTerm = this.searchText.toLowerCase();
+    return this.menuItems.filter(item => item.name.toLowerCase().includes(searchTerm));
+  }
 
   addMenuItem(name: string, description: string, image: string) {
     this.menuItems.push({ name, description, image });

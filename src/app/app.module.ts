@@ -51,6 +51,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { provideAnalytics,getAnalytics,ScreenTrackingService,UserTrackingService } from '@angular/fire/analytics';
 import { providePerformance,getPerformance } from '@angular/fire/performance';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { MenuFilterPipe } from './menu/menu-filter.pipe';
 
 
 
@@ -75,6 +76,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     Inicio2Component,
     VistaAdminComponent,
     LecturaVozComponent,
+    MenuFilterPipe
 
 
   ],
