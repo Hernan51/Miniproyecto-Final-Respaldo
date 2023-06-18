@@ -10,21 +10,14 @@
 
   <ul class="menu">
     <li class="menu1"><a routerLink="/">Inicio</a></li>
-    <li><a routerLink="/login">Login</a></li>
-    <li><a routerLink="/register">Registro</a></li>
-    <!--<li><a routerLink="/menu">Menú</a></li>
-    <li><a routerLink="/galeria">Galeria</a></li>-->
-    <li><a routerLink="/"><img class= "img" src="../../assets/imagenes/png-clipart-texas-longhorn-english-longhorn-longhorn-steakhouse-lone-grove-others-cow-goat-family-logo.png" alt=""></a></li>
-    <!--<li><a routerLink="/reservas">Reservas</a></li>-->
+    <li><a routerLink="/menu">Menú</a></li>
     <li><a routerLink="/galeria">Galeria</a></li>
+    <li><a routerLink="{Inicio}"><img class= "img" src="../../assets/imagenes/png-clipart-texas-longhorn-english-longhorn-longhorn-steakhouse-lone-grove-others-cow-goat-family-logo.png" alt=""></a></li>
+    <li><a routerLink="/reservas">Reservas</a></li>
     <li><a routerLink="/contacto">Contacto</a></li>
-    <li><a routerLink="/acerca">Acerca</a></li>
+    <li><a routerLink="/acerca">Acerca de</a></li>
   </ul>
 </nav>
-<div class="fire-animation">
-  <span class="letter">ROYAL ASADO</span>
-
-</div>
 <div class="container">
   <div [ngStyle]="{'font-size':'50px','margin-top':'30px','text-align':'center','font-family':'Franklin Gothic Medium,Arial Narrow, Arial, sans-serif','color':'white'}">"NUESTRO SABOR TE ENCANTARÁ"</div>
   <div class="video-wrapper">
@@ -34,9 +27,10 @@
   </div>
 
   </div>
+  <app-lectura-voz></app-lectura-voz>
 
   <body class="p-3 m-0 border-0 bd-example">
-
+    <app-lectura-voz></app-lectura-voz>
     <!-- Example Code -->
 
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
@@ -81,10 +75,7 @@
 
 
   </body>
-
-  <div style="text-align: center; padding-bottom: 70%; position: relative; height: 0;">
-    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://api.maptiler.com/maps/basic-v2/?key=6SSTe95zyNBXcTrglMXn#15.1/21.913380555556/-102.315025" ></iframe>
-  </div>
+  <div style="text-align: center;"><iframe width="700" height="500" src="https://api.maptiler.com/maps/basic-v2/?key=6SSTe95zyNBXcTrglMXn#15.1/21.913380555556/-102.315025" ></iframe></div>
 
 
 
@@ -111,5 +102,6 @@
       <p>ID: 292810</p>
     </div>
   </div>
+
   <div [ngStyle]="{'color':'red','background-color':'#ff0','text-align':'center','font-size':'20px','font-family':'sans-serif'}">Este es un proyecto escolar, el contenido que se muestra no es real, y no debe tomarse en cuenta.</div>
 

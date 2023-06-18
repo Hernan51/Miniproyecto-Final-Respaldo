@@ -1,0 +1,60 @@
+
+<head>
+  <title>Registro de usuario</title>
+  <link rel="stylesheet" href="register.component.css">
+</head>
+
+<nav class="navbar">
+
+  <ul class="menu">
+    <li class="menu1"><a routerLink="/">Inicio</a></li>
+    <li><a routerLink="/login">Login</a></li>
+    <li><a routerLink="/register">Registro</a></li>
+    <!--<li><a routerLink="/menu">Menú</a></li>
+    <li><a routerLink="/galeria">Galeria</a></li>-->
+    <li><a routerLink="/"><img class= "img" src="../../assets/imagenes/png-clipart-texas-longhorn-english-longhorn-longhorn-steakhouse-lone-grove-others-cow-goat-family-logo.png" alt=""></a></li>
+    <!--<li><a routerLink="/reservas">Reservas</a></li>-->
+    <li><a routerLink="/galeria">Galeria</a></li>
+    <li><a routerLink="/contacto">Contacto</a></li>
+    <li><a routerLink="/acerca">Acerca</a></li>
+  </ul>
+</nav>
+
+<div class="register">
+  <form [formGroup]="formReg" (ngSubmit)="onSubmit()" class="container">
+    <h1>Register</h1>
+    <div class="form-group">
+      <input
+        type="email"
+        formControlName="email"
+        name="email"
+        placeholder="Email"
+        required="required"
+        class="form-control"
+      />
+    </div>
+    <div class="form-group">
+      <input
+        type="password"
+        formControlName="password"
+        name="password"
+        placeholder="Password"
+        required="required"
+        class="form-control"
+      />
+    </div>
+    <div class="form-group">
+      <input
+        type="password"
+        name="password"
+        placeholder="Repeat the password"
+        required="required"
+        class="form-control"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Register</button>
+    <button class="btn btn-link">
+      <a href="/login">¿Ya eres miembro? ¡Inicia Sesion!</a>
+    </button>
+  </form>
+</div>

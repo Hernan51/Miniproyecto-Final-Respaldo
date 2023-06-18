@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
@@ -40,6 +40,17 @@ import { GraficaComponent } from './grafica/grafica.component';
 import { ConsultasFirestoreComponent } from './consultas-firestore/consultas-firestore.component';
 import { HttpClientModule } from '@angular/common/http';
 import { provideFunctions,getFunctions } from '@angular/fire/functions';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { Inicio2Component } from './inicio2/inicio2.component';
+import { VistaAdminComponent } from './vista-admin/vista-admin.component';
+import { LecturaVozComponent } from './lectura-voz/lectura-voz.component';
+
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { provideAnalytics,getAnalytics,ScreenTrackingService,UserTrackingService } from '@angular/fire/analytics';
+import { providePerformance,getPerformance } from '@angular/fire/performance';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 
 
@@ -59,6 +70,11 @@ import { provideFunctions,getFunctions } from '@angular/fire/functions';
     DomsegurpPipe,
     GraficaComponent,
     ConsultasFirestoreComponent,
+    LoginComponent,
+    RegisterComponent,
+    Inicio2Component,
+    VistaAdminComponent,
+    LecturaVozComponent,
 
 
   ],
@@ -71,11 +87,13 @@ import { provideFunctions,getFunctions } from '@angular/fire/functions';
     AlertModule,
     MatTabsModule,
     MatButtonModule,
+    MatIconModule,
     MatSlideToggleModule,
     MatCardModule,
     MatDividerModule,
     MatProgressSpinnerModule,
     MatTableModule,
+    MatMenuModule,
     MatPaginatorModule,
     BrowserAnimationsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
@@ -88,9 +106,20 @@ import { provideFunctions,getFunctions } from '@angular/fire/functions';
     AngularFirestoreModule,
     ReactiveFormsModule,
     HttpClientModule,
-    provideFunctions(() => getFunctions())
+
+    provideFunctions(() => getFunctions()),
+      provideAnalytics(() => getAnalytics()),
+      providePerformance(() => getPerformance()),
+      ServiceWorkerModule.register('ngsw-worker.js', {
+        enabled: !isDevMode(),
+        // Register the ServiceWorker as soon as the application is stable
+        // or after 30 seconds (whichever comes first).
+        registrationStrategy: 'registerWhenStable:30000'
+      })
   ],
-  providers: [],
+  providers: [
+    ScreenTrackingService,UserTrackingService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

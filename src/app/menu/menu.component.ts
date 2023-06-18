@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import * as QRCode from 'qrcode';
 
 interface MenuItem {
   name: string;
@@ -58,6 +59,32 @@ export class MenuComponent {
 
   addMenuItem(name: string, description: string, image: string) {
     this.menuItems.push({ name, description, image });
+  }
+
+  public qrCodeText: string = '';
+  public qrCodeImageUrl: string = '';
+
+  dataObjects = [
+    { name: 'Tacos de Marlin con Pulpo', Precio: '$230', Porcion: '3' },
+    { name: 'Rib Eye a la tabla', Precio: '$440', Porcion: '1' },
+    { name: 'Especial de mariscos', Precio: '$319', Porcion: '220gr' },
+    { name: 'Flat Iron Steak', Precio: '$379', Porcion: '250gr' },
+    { name: 'Paquete Carne Asada', Precio: '$310', Porcion: '643gr/total' },
+    { name: 'Filete en su jugo', Precio: '$240', Porcion: '300gr' },
+  ];
+
+  generateQRCode() {
+    const randomIndex = Math.floor(Math.random() * this.dataObjects.length);
+    const randomObject = this.dataObjects[randomIndex];
+    const qrCodeText = JSON.stringify(randomObject);
+
+    QRCode.toDataURL(qrCodeText)
+      .then((url) => {
+        this.qrCodeImageUrl = url;
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   }
 }
 

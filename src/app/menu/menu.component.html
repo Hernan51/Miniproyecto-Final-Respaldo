@@ -33,3 +33,7 @@
     </div>
   </div>
 </div>
+<div style="text-align: center;">
+<button (click)="generateQRCode()">Obtener Detalles</button>
+    <img *ngIf="qrCodeImageUrl" class="qr-code" [src]="qrCodeImageUrl" alt="Código QR">
+  </div>

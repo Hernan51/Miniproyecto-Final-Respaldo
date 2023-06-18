@@ -1,15 +1,22 @@
 {
-  "hosting": {
-    "source": ".",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
-    "frameworksBackend": {
-      "region": "us-central1"
+  "hosting": [
+    {
+      "source": ".",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "frameworksBackend": {
+        "region": "us-central1"
+      }
+    },
+    {
+      "target": "minii",
+      "source": ".",
+      "frameworksBackend": {}
     }
-  },
+  ],
   "functions": {
     "source": "functions"
   }
