@@ -67,6 +67,7 @@ export class ReservasComponent implements OnInit {
       return;
     }else{
       Swal.fire('Reservación Confirmada');
+      this.enviarCorreo();
     // Guardar los datos en localStorage
     const datosGuardados = localStorage.getItem(DATOS_STORAGE_KEY);
     if (datosGuardados) {
