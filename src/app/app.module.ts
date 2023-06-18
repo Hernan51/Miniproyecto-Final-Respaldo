@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
@@ -40,6 +40,7 @@ import { GraficaComponent } from './grafica/grafica.component';
 import { ConsultasFirestoreComponent } from './consultas-firestore/consultas-firestore.component';
 import { HttpClientModule } from '@angular/common/http';
 import { provideFunctions,getFunctions } from '@angular/fire/functions';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 
 
@@ -88,7 +89,13 @@ import { provideFunctions,getFunctions } from '@angular/fire/functions';
     AngularFirestoreModule,
     ReactiveFormsModule,
     HttpClientModule,
-    provideFunctions(() => getFunctions())
+    provideFunctions(() => getFunctions()),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
