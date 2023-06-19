@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { UserService } from '../user.service';
+import { Router } from '@angular/router';
 
 const DATOS_STORAGE_KEY = 'datosGuardados';
 
@@ -9,6 +11,18 @@ const DATOS_STORAGE_KEY = 'datosGuardados';
 
 })
 export class ListareservasComponent {
+  constructor(private userService: UserService, private router: Router) {}
+
+  onClick() {
+    this.userService
+      .logout()
+      .then(() => {
+        this.router.navigate(['/register']);
+      })
+      .catch((error) => console.log(error));
+  }
+
+
   title: 'miniproyecto2' | undefined;
   nombre: any;
   telefono: any;

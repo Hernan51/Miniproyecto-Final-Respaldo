@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart } from 'chart.js';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { UserService } from '../user.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,7 +12,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 })
 export class GraficaComponent implements OnInit{
   historial: any[] = [];
-  constructor(private firestore: AngularFirestore) { }
+  constructor(private firestore: AngularFirestore,private userService:UserService,private router: Router) { }
 
   ngOnInit(): void {
     this.firestore.collection('reservaciones').valueChanges().subscribe(data => {
@@ -45,6 +47,15 @@ export class GraficaComponent implements OnInit{
         }
       }
     });
+  }
+
+  onClick() {
+    this.userService
+      .logout()
+      .then(() => {
+        this.router.navigate(['/register']);
+      })
+      .catch((error) => console.log(error));
   }
 }
 

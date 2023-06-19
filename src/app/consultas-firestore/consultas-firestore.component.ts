@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { FirestoreApiService } from '../firebase-api.service';
+import { UserService } from '../user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-consultas-firestore',
@@ -10,7 +12,7 @@ import { FirestoreApiService } from '../firebase-api.service';
 export class ConsultasFirestoreComponent implements OnInit {
   resultados!: any[];
 
-  constructor(private firestore: AngularFirestore, private firestoreApiService: FirestoreApiService) { }
+  constructor(private firestore: AngularFirestore, private firestoreApiService: FirestoreApiService,private userService:UserService, private router: Router) { }
 
   ngOnInit() {
     // Realizar una consulta a la base de datos de Cloud Firestore
@@ -47,5 +49,14 @@ export class ConsultasFirestoreComponent implements OnInit {
           // Maneja el error de acuerdo a tus necesidades
         }
       );
+  }
+
+  onClick() {
+    this.userService
+      .logout()
+      .then(() => {
+        this.router.navigate(['/register']);
+      })
+      .catch((error) => console.log(error));
   }
 }

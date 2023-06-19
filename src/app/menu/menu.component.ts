@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import * as QRCode from 'qrcode';
+import { UserService } from '../user.service';
+import { Router } from '@angular/router';
 
 export interface MenuItem {
   name: string;
@@ -54,10 +56,18 @@ export class MenuComponent {
 
   ];
 
-  constructor() { }
+  constructor(private userService: UserService, private router: Router) {}
   showSearch: boolean = false;
   searchText: string = '';
 
+  onClick() {
+    this.userService
+      .logout()
+      .then(() => {
+        this.router.navigate(['/register']);
+      })
+      .catch((error) => console.log(error));
+  }
   toggleSearch() {
     this.showSearch = !this.showSearch;
   }

@@ -5,6 +5,8 @@ import Swal from 'sweetalert2';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 import 'firebase/firestore';
+import { Router } from '@angular/router';
+import { UserService } from '../user.service';
 
 
 
@@ -20,8 +22,22 @@ const DATOS_STORAGE_KEY = 'datosGuardados';
 
 export class ReservasComponent implements OnInit {
 
-  constructor(private toastr: ToastrService, private firestore: AngularFirestore, private correoService: CorreoService) {}
+  constructor(
+    private toastr: ToastrService,
+    private firestore: AngularFirestore,
+    private correoService: CorreoService,
+    private userService: UserService,
+    private router: Router
+  ) {}
 
+  onClick() {
+    this.userService
+      .logout()
+      .then(() => {
+        this.router.navigate(['/register']);
+      })
+      .catch((error) => console.log(error));
+  }
 
   title: 'miniproyecto2' | undefined;
   nombre: any;

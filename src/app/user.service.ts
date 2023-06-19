@@ -6,6 +6,7 @@ import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signO
 })
 export class UserService {
 
+
   constructor(private auth: Auth) { }
 
   register({ email, password }: any) {
@@ -23,5 +24,7 @@ export class UserService {
   logout() {
     return signOut(this.auth);
   }
+
+
 
 }
