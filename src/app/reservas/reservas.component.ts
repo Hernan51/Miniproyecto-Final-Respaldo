@@ -91,8 +91,9 @@ export class ReservasComponent implements OnInit {
       historial.push(datos);
       localStorage.setItem(DATOS_STORAGE_KEY, JSON.stringify(historial));
       this.firestore.collection('reservaciones').add(datos)
-      .then(() => {
-        console.log('Datos guardados en Firestore');
+      .then((docRef) => {
+        const docId = docRef.id;
+        console.log('Datos guardados en Firestore: ', docId);
         // Puedes realizar alguna acción adicional después de guardar los datos
 
 

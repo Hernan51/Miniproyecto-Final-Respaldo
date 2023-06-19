@@ -43,13 +43,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of historial">
+      <tr *ngFor="let item of historial;let i = index">
         <td>{{ item.nombre }}</td>
         <td>{{ item.telefono }}</td>
         <td>{{ item.email }}</td>
         <td>{{ item.fecha }}</td>
         <td>{{ item.hora }}</td>
-        <td><button (click)="borrarDocumento(item)" class="btn btn-danger">Borrar</button></td>
+        <td><button (click)="borrarItem(i)" class="btn btn-danger">Borrar</button></td>
       </tr>
     </tbody>
   </table>

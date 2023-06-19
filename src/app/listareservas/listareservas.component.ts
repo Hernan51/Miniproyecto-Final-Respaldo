@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
-import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 const DATOS_STORAGE_KEY = 'datosGuardados';
@@ -24,14 +23,17 @@ export class ListareservasComponent {
       .catch((error) => console.log(error));
   }
 
-  borrarDocumento(item: any) {
-    const documentoRef = this.firestore.collection('nombre_de_la_coleccion').doc(item.id);
-    documentoRef.delete()
+  borrarItem(index: number) {
+    const item = this.historial[index];
+    this.historial.splice(index, 1); // Eliminar el elemento del array local
+
+    // Eliminar el documento correspondiente de Firebase Firestore utilizando el ID almacenado en el elemento
+    this.firestore.collection('reservaciones').doc(item.id).delete()
       .then(() => {
-        console.log('Documento eliminado correctamente');
+        console.log('Documento eliminado de Firebase Firestore correctamente');
       })
       .catch((error) => {
-        console.error('Error al eliminar el documento', error);
+        console.error('Error al eliminar el documento de Firebase Firestore', error);
       });
   }
 
