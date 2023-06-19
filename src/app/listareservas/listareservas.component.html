@@ -39,6 +39,7 @@
         <th>Email</th>
         <th>Fecha</th>
         <th>Hora</th>
+        <th>Acciones</th>
       </tr>
     </thead>
     <tbody>
@@ -48,6 +49,7 @@
         <td>{{ item.email }}</td>
         <td>{{ item.fecha }}</td>
         <td>{{ item.hora }}</td>
+        <td><button (click)="borrarDocumento(item)" class="btn btn-danger">Borrar</button></td>
       </tr>
     </tbody>
   </table>

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
+import { AngularFireStorage } from '@angular/fire/compat/storage';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 const DATOS_STORAGE_KEY = 'datosGuardados';
 
@@ -11,7 +13,7 @@ const DATOS_STORAGE_KEY = 'datosGuardados';
 
 })
 export class ListareservasComponent {
-  constructor(private userService: UserService, private router: Router) {}
+  constructor(private userService: UserService, private router: Router, private firestore: AngularFirestore) {}
 
   onClick() {
     this.userService
@@ -21,6 +23,18 @@ export class ListareservasComponent {
       })
       .catch((error) => console.log(error));
   }
+
+  borrarDocumento(item: any) {
+    const documentoRef = this.firestore.collection('nombre_de_la_coleccion').doc(item.id);
+    documentoRef.delete()
+      .then(() => {
+        console.log('Documento eliminado correctamente');
+      })
+      .catch((error) => {
+        console.error('Error al eliminar el documento', error);
+      });
+  }
+
 
 
   title: 'miniproyecto2' | undefined;
